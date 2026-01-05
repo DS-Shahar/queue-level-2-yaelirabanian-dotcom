@@ -82,4 +82,38 @@ public class Main {
             q1.insert(q2.remove());
         return maxSum;
     }
+
+
+
+    
+	
+	public static int getQ(Queue<Integer> q) {
+		q.insert(null);
+		int max=0;
+		while (q.head() != null) {
+			int x=q.remove();
+			if(x>max)
+				max= x;
+			q.insert(x);
+		}
+		q.remove();
+		return max;
+	}
+	
+	public static int numDigits(int num) {
+		return (int)Math.log10(num)+1;
+	}
+	
+	public static int getDigit(int num,int d) {
+		while (d!= 0) {
+			num = num/10;
+			d -= 1;
+		}
+		return num%10;
+	}
+
+
+
+}
+
 }
